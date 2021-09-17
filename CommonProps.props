@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BOOST_ROOT>$(BOOST_DIR)\include\boost-1_77</BOOST_ROOT>
+    <BOOST_LIB>$(BOOST_DIR)\lib</BOOST_LIB>
+    <OPENVR_ROOT>$(MSBuildProjectDirectory)\..\openvr</OPENVR_ROOT>
+    <THIRD_PARTY>$(SolutionDir)\third-party</THIRD_PARTY>
+    <QTDIR>$(QT_DIR)</QTDIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\lib_vrmotioncompensation\include;$(THIRD_PARTY)\MinHook\include;$(THIRD_PARTY)\easylogging++;$(OPENVR_ROOT)\headers;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OPENVR_ROOT)\lib\win64;$(THIRD_PARTY)\MinHook\lib;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(OPENVR_ROOT)\lib\win64;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="BOOST_ROOT">
+      <Value>$(BOOST_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_LIB">
+      <Value>$(BOOST_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OPENVR_ROOT">
+      <Value>$(OPENVR_ROOT)</Value>
+    </BuildMacro>
+    <BuildMacro Include="THIRD_PARTY">
+      <Value>$(THIRD_PARTY)</Value>
+    </BuildMacro>
+    <BuildMacro Include="QTDIR">
+      <Value>$(QTDIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
