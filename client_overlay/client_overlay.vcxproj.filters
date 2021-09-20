@@ -31,6 +31,9 @@
     <ClCompile Include="Release\moc_DeviceManipulationTabController.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\third-party\easylogging++\easylogging++.cc">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="src\tabcontrollers\DeviceManipulationTabController.h">

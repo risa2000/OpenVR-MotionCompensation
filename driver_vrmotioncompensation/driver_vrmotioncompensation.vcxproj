@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\third-party\easylogging++\easylogging++.cc" />
     <ClCompile Include="src\devicemanipulation\Debugger.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\hooks\ITrackedDeviceServerDriver005Hooks.cpp" />
