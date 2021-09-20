@@ -158,6 +158,17 @@
       <AdditionalDependencies>minhook.x64d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <Profile />
     </Link>
+    <PostBuildEvent>
+      <Message>Update driver file in test_root.</Message>
+      <Command>dumpbin /headers /symbols /exports /imports $(TargetPath) &gt; $(TargetPath).txt
+IF EXIST "$(SolutionDir)test_root\00vrmotioncompensation\bin\win64\" (
+echo Folder $(SolutionDir)test_root\00vrmotioncompensation\bin\win64 exists
+) ELSE (
+mkdir $(SolutionDir)test_root\00vrmotioncompensation\bin\win64
+)
+copy $(TargetPath) $(SolutionDir)test_root\00vrmotioncompensation\bin\win64
+echo "Writing $(TargetFileName) -&gt; $(SolutionDir)test_root\00vrmotioncompensation\bin\win64"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -197,6 +208,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>minhook.x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>dumpbin /headers /symbols /exports /imports $(TargetPath) &gt; $(TargetPath).txt
+IF EXIST "$(SolutionDir)test_root\00vrmotioncompensation\bin\win64\" (
+echo Folder $(SolutionDir)test_root\00vrmotioncompensation\bin\win64 exists
+) ELSE (
+mkdir $(SolutionDir)test_root\00vrmotioncompensation\bin\win64
+)
+copy $(TargetPath) $(SolutionDir)test_root\00vrmotioncompensation\bin\win64
+echo "Writing $(TargetFileName) -&gt; $(SolutionDir)test_root\00vrmotioncompensation\bin\win64"</Command>
+      <Message>Update driver file in test_root.</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -362,3 +362,4 @@ ASALocalRun/
 /installer/old Installer
 /installer/binary
 /third-party/boost_1_75_0
+/test_root/00vrmotioncompensation/bin/win64/driver_00vrmotioncompensation.dll
