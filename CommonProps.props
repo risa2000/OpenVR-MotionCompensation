@@ -12,6 +12,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)\lib_vrmotioncompensation\include;$(THIRD_PARTY)\MinHook\include;$(THIRD_PARTY)\easylogging++;$(OPENVR_ROOT)\headers;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ELPP_THREAD_SAFE;ELPP_NO_DEFAULT_LOG_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(OPENVR_ROOT)\lib\win64;$(THIRD_PARTY)\MinHook\lib;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
